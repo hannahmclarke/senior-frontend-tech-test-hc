@@ -18,7 +18,7 @@ export const convertString = (
   shiftNum: number,
   isEncrypt: boolean
 ): string => {
-  // Split the string into an array of characters
+  // Split the string into array of characters
   const splitString = inputValue.split("");
   let returnString = "";
   // Determines the shift value based on whether encrypting or decrypting

@@ -18,22 +18,26 @@ export const convertString = (
   shiftNum: number,
   isEncrypt: boolean
 ): string => {
+  // Split the string into an array of characters
   const splitString = inputValue.split("");
   let returnString = "";
+  // Determines the shift value based on whether encrypting or decrypting
   const shiftValue = isEncrypt ? shiftNum : 26 - shiftNum;
   splitString.forEach((char) => {
+    // Gets the initial ASCII code for the character
     const originalCode = char.charCodeAt(0);
     const isLowerCase = originalCode >= 65 && originalCode <= 90;
     const isUpperCase = originalCode >= 97 && originalCode <= 122;
     if (isLowerCase) {
-      const newValue = ((originalCode + shiftValue - 65) % 26) + 65;
-      const newChar = String.fromCharCode(newValue);
+      const newCode = ((originalCode + shiftValue - 65) % 26) + 65;
+      const newChar = String.fromCharCode(newCode);
       returnString += newChar;
     } else if (isUpperCase) {
-      const newValue = ((originalCode + shiftValue - 97) % 26) + 97;
-      const newChar = String.fromCharCode(newValue);
+      const newCode = ((originalCode + shiftValue - 97) % 26) + 97;
+      const newChar = String.fromCharCode(newCode);
       returnString += newChar;
     } else {
+      // Non-letter characters are ignored
       returnString += char;
     }
   });

@@ -1,0 +1,18 @@
+div.output {
+  border-width: 2px;
+  border-style: solid;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 5px;
+  word-wrap: break-word;
+}
+
+div#container {
+  border-color: darkgreen;
+  background-color: rgba(166, 227, 193, 0.413);
+}
+
+div#validation {
+  border-color: darkred;
+  background-color: rgba(175, 2, 28, 0.3);
+}
